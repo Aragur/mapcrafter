@@ -43,6 +43,9 @@ else
     printenv | sed 's/^\(.*\)$/export \1/g' | grep -E "^export threads" > /opt/temp_env.sh
 fi
 
+# Make /opt/temp_env.sh executable
+chmod +x /opt/temp_env.sh
+
 #Copy crontab file from config to cron.d directory and gives permission to run
 cp /config/mapcrafter-cron /etc/cron.d/mapcrafter-cron && \
 chmod 0777 /etc/cron.d/mapcrafter-cron && \
